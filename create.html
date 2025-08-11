@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ProLink — Criar</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="brand">
+        <div class="logo"><i class="fas fa-link" style="color:white"></i></div>
+        <h1>ProLink</h1>
+      </div>
+      <nav>
+        <a class="btn btn-ghost" href="index.html">Home</a>
+      </nav>
+    </header>
+
+    <main style="margin-top:18px">
+      <div class="form-card">
+        <h2> Criar seu ProLink </h2>
+        <form id="prolink-form" style="margin-top:12px">
+          <div style="margin-bottom:10px">
+            <label class="field-label">Título (opcional)</label>
+            <input id="pl-name" class="input" placeholder="Ex: João - Perfil" />
+          </div>
+
+          <div style="margin-bottom:10px">
+            <label class="field-label">Link Final (destino)</label>
+            <input id="pl-target" class="input" placeholder="https://seusite.com/loja" required />
+          </div>
+
+          <div style="margin-bottom:10px">
+            <label class="field-label">Selecione rede e cole o link</label>
+            <div style="display:flex;gap:8px">
+              <select id="select-network" class="input" style="width:160px"></select>
+              <input id="input-network-url" class="input" placeholder="https://instagram.com/usuario" />
+              <button id="add-network" type="button" class="btn btn-primary">Adicionar</button>
+            </div>
+            <div id="socials-list" class="social-list"></div>
+          </div>
+
+          <div id="preview" style="display:none;margin-top:10px">
+            <div id="preview-title" style="font-weight:700">Preview</div>
+            <div id="preview-list" class="space-y-1 small-muted" style="margin-top:8px"></div>
+          </div>
+
+          <div style="margin-top:14px;display:flex;gap:10px;align-items:center">
+            <button id="submit-btn" class="btn btn-primary" type="submit">Gerar Link</button>
+            <div id="generated-url" class="generated"><span class="url-text"></span></div>
+            <button id="copy-url" class="copy-btn" style="display:none">Copiar</button>
+          </div>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <!-- modules -->
+  <script type="module" src="js/firebase-config.js"></script>
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/create.js"></script>
+</body>
+</html>
